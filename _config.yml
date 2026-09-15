@@ -5,8 +5,8 @@
 search:
   path: search.xml
   field: post
-  format: html
-  limit: 10000
+  content: true
+  format: striptags
 
 # Site
 title: LoneDream
@@ -19,7 +19,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://lonedream.github.io
+url: https://lonedream.github.io
 root: /
 permalink: /blog/:lonedream.html #year/:month/:day/:title/
 permalink_defaults:
@@ -79,7 +79,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: fluid
 
 # Depl oyment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -87,3 +87,29 @@ deploy:
   type: git
   repo: git@github.com:lonedream/lonedream.github.io.git
   branch: master
+# Hexo-all-minifier
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
